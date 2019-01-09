@@ -1,0 +1,9 @@
+h1.titulo {
+    & {
+        display: block;
+        text-align: center;
+        font-weight: 900;
+        font-size: 48px;
+        margin: 2rem 0;
+    }
+}

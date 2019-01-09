@@ -1,37 +1,29 @@
 // Importando o React
-import React from "react";
+import React, { Component } from "react";
 import './menu.scss';
 
-const Menu = () => (
-  <nav id="main-menu" className="reset section">
-    <div className="content">
-      <div className="col-12">
-        <ul>
-          <li>
-            <a href="">PS4</a>
-          </li>
-          <li>
-            <a href="">PS3</a>
-          </li>
-          <li>
-            <a href="">XONE</a>
-          </li>
-          <li>
-            <a href="">X360</a>
-          </li>
-          <li>
-            <a href="">WII/WIIU</a>
-          </li>
-          <li>
-            <a href="">3DS/DS</a>
-          </li>
-          <li>
-            <a href="">NINTENDO SWITCH</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-);
+import { NavLink } from 'react-router-dom';
+
+class Menu extends Component {
+  toggleMenuMobile = () => {
+    document.querySelector('#main-menu').classList.toggle('open')
+  }
+
+  render() {
+    return (
+      <nav id="main-menu" className="reset section">
+        <div className="content">
+          <div className="col-12">
+            <ul>
+              <li><NavLink to="/">Home</NavLink></li>
+              <li><NavLink to="contato">Contato</NavLink></li>
+              <li><NavLink to="sobre">Sobre</NavLink></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    );
+  }
+}
 
 export default Menu;
