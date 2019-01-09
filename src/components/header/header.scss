@@ -1,0 +1,138 @@
+#main-header {
+    & {
+        padding: 1rem 0;
+        background: black;
+    }
+
+    .top {
+        & {
+            display: inline-flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            & {
+                width: 10%;
+                text-align: center;
+            }
+
+            img {
+                & {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .buscar {
+            & {
+                width: 60%;
+            }
+
+            form {
+                & {
+                    display: inline-flex;
+                    width: 100%;
+                }
+
+                input[type=text] {
+                    & {
+                        width: 80%;
+                        padding: 10px;
+                        margin: 5px;
+
+                        border: 0;
+                        border-radius: 5px;
+                        font-size: 1rem;
+                        font-weight: 700;
+
+                        outline: none;
+                    }
+                }
+
+                input[type=submit] {
+                    & {
+                        width: 20%;
+                        padding: 10px;
+                        margin: 5px;
+
+                        border: 0;
+                        border-radius: 5px;
+                        background: #fed801;
+                        color: black;
+                        font-size: 1rem;
+                        font-weight: 800;
+                        text-transform: uppercase;
+                        outline: none;
+
+                        cursor: pointer;
+                        transition: .2s all;
+                    }
+
+                    &:hover {
+                        & {
+                            background: #bb9f03;
+                        }
+                    }
+                }
+            }
+        }
+
+        .carrinho-login {
+            & {
+                color: white;
+                text-align: center;
+                font-weight: 800;
+
+                border: 1px solid;
+                transition: .2s all;
+            }
+
+            &:hover {
+                & {
+                    background: white;
+                }
+
+                i,
+                span {
+                    & {
+                        color: black;
+                    }
+                }
+            }
+            
+            a {
+                & {
+                    padding: 10px;
+                    color: white;
+                    text-align: center;
+                    text-decoration: none;
+        
+                    display: inline-block;
+                }
+            }
+
+            i {
+                & {
+                    font-size: 1.5rem;
+                    color: #fed801;
+
+                    transition: .2s all;
+                }
+            }
+
+            span {
+                & {
+                    display: inline-block;
+                    width: 100%;
+        
+                    margin-top: 5px;
+        
+                    font-size: 1rem;
+                    transition: .2s all;
+                }
+            }
+        }
+    }
+}

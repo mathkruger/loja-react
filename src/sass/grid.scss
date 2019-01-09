@@ -1,0 +1,165 @@
+@import './reset.scss';
+
+/*
+** GRID
+******/
+
+body .#{$resetClass} * {
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/*
+** COLUMNS SETTINGS
+******/
+
+$columns 	: (
+	'col-12' : (
+		name 				: 'column-12',
+		width 				: 100%,
+		background-color 	: #F0E68C,
+		padding				: 0 1rem
+	),
+	'col-11' : (
+		name 				: 'column-11',
+		width 				: 91.6666%,
+		background-color 	: #9370DB
+	),
+	'col-10' : (
+		name 				: 'column-10',
+		width 				: 83.3333%,
+		background-color 	: #6495ED
+	),
+	'col-9' : (
+		name 				: 'column-9',
+		width 				: 75%,
+		background-color 	: #DB7093
+	),
+	'col-8' : (
+		name 				: 'column-8',
+		width 				: 66.6666%,
+		background-color 	: #4682B4
+	),
+	'col-7' : (
+		name 				: 'column-7',
+		width 				: 58.3333%,
+		background-color 	: #FA8072
+	),
+	'col-6' : (
+		name 				: 'column-6',
+		width 				: 50%,
+		background-color 	: #20B2AA
+	),
+	'col-5' : (
+		name 				: 'column-5',
+		width 				: 41.6666%,
+		background-color 	: #FF8C00
+	),
+	'col-4' : (
+		name 				: 'column-4',
+		width 				: 33.3333%,
+		background-color 	: #3CB371
+	),
+	'col-3' : (
+		name 				: 'column-3',
+		width 				: 25%,
+		background-color 	: #DAA520
+	),
+	'col-2-5' : (
+		name 				: 'column-2-5',
+		width 				: 20%,
+		background-color 	: #FFD700
+	),
+	'col-2' : (
+		name 				: 'column-2',
+		width 				: 16.6666%,
+		background-color 	: #FFD700
+	),
+	'col-1' : (
+		name 				: 'column-1',
+		width 				: 8.3333%,
+		background-color 	: #DC143C
+	)
+);
+
+@mixin columnsSettings() {
+	display: inline-block;
+	padding-left: 1rem;
+	vertical-align: middle;
+}
+
+
+.#{$resetClass} {
+
+	$cols : '';
+
+	@each $col, $value in $columns {
+
+		$width 		      : map-get($value, width);
+		$background-color : map-get($value, background-color);
+		$padding 	      : map-get($value, padding);
+
+		.#{$col} {
+			width: $width;
+			padding: $padding;
+		}
+
+		$cols : '#{$cols}.#{$col},';
+	}
+
+	#{$cols} {
+		@include columnsSettings;
+	}
+
+	.row {
+		margin-left: -1rem;
+		margin-right: 0;
+	}
+}
+
+@mixin debugSettings() {
+    color: #FFFFFF;
+    background: #111111;
+	text-transform: uppercase;
+	font-family: Arial;
+	font-size: 0.625rem;
+	vertical-align: top;
+	display: inline-block;
+	padding: 0.625rem;
+	margin-bottom: 1rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.3;
+}
+
+.debug {
+
+	.#{$resetClass} {
+
+		$cols : '';
+
+		@each $col, $value in $columns {
+
+			$name 		      : map-get($value, name);
+			$background-color : map-get($value, background-color);
+
+			.#{$col} {
+				background-color: $background-color;
+				position: relative;
+			}
+
+			.#{$col}:before {
+				content: $name;
+			}
+
+			$cols : '#{$cols}.#{$col}:before,';
+		}
+
+		#{$cols} {
+			@include debugSettings;
+		}
+	}
+}

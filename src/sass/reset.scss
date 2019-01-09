@@ -1,0 +1,110 @@
+@charset "UTF-8";
+/*
+** RESET
+*******/
+
+/*
+** CLASS PARA RESET
+*******/
+$resetClass		: 'reset';
+
+/*
+** SIZE FUNCTION
+*******/
+@function size($size, $type) {
+	@if ($type == 'rem' OR $type == 'em') {
+
+		@return #{($size / 16)}#{$type};
+	}
+}
+
+/*
+** FONTs
+*******/
+
+$fontFamily1: 'Open Sans', sans-serif;
+
+
+/*
+** FONT SIZE SITE
+*******/
+
+$font10	: 0.625rem;
+$font11 : 0.6875rem;
+$font12	: 0.75rem;
+$font14	: 0.875rem;
+$font18	: 1.125rem;
+$font20	: 1.25rem;
+$font24	: 1.5rem;
+$font28	: 1.75rem;
+$font32	: 2rem;
+$font36	: 2.25rem;
+$font42	: 2.625rem;
+
+/*
+** HTML RESET
+*******/
+html {
+	font-size: 1rem !important;
+}
+
+/*
+** BODY RESET
+*******/
+body {
+	width: 100%;
+	margin: 0;
+	padding: 0 !important;
+	//font-size: 0;
+}
+
+#ajaxBusy {
+	display: none !important;
+}
+
+/*
+** SECTION
+*******/
+.section{
+	&{
+		width: 100%;
+		float: left;
+	}
+}
+/*
+** EACH
+*******/
+
+.#{$resetClass} {
+	&{
+		font-size: 0;
+	}
+	a, p, span, ul, li, h1, h2, h3, h4, h5, h6, label, table {
+		width: auto;
+		height: auto;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		text-decoration: none;
+		font-family: $fontFamily1;
+		font-weight: initial;
+		line-height: inherit;
+		font-size: 1rem;
+		display: initial;
+	}
+
+	img, fieldset, figure {
+		width: auto;
+		height: auto;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		display: block;
+	}
+
+	.content {
+		width: 100%;
+		max-width: 1180px;
+		margin: 0 auto;
+	}
+}
