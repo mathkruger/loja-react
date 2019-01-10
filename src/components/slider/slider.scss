@@ -1,0 +1,14 @@
+@media screen and (max-width: 499px) {
+    #slider {
+        .owl-carousel {
+            .slider-item {
+                img {
+                    & {
+                        width: 155%;
+                        visibility: hidden;
+                    }
+                }
+            }
+        }
+    }
+}

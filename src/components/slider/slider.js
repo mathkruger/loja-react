@@ -10,17 +10,25 @@ class Slider extends Component {
   options = {
     items: 1,
     nav: true,
-    rewind: true,
+    repeat: true,
     autoplay: true
   }
 
   render() {
     return (
-      <section id="home-slider" className="reset section">
+      <section id="slider" className="reset section">
         <OwlCarousel ref="car" options={this.options} >
           {
             this.props.images.map((element, i) => {
-              return (<div><img src={element.src} alt={element.alt}/></div>)
+              let style = {
+                background: 'url(' + element.src + ') center / 155% no-repeat',
+              }
+
+              return (
+                <div className="slider-item" style={style}>
+                  <img src={element.src} alt={element.alt}/>
+                </div>
+              )
             })
           }
         </OwlCarousel>

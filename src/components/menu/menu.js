@@ -24,8 +24,8 @@ class Menu extends Component {
             <ul>
               <button className="close-mobile" onClick={this.closeMenuMobile}>Fechar</button>
               <li><NavLink to="/" onClick={this.closeMenuMobile}>Home</NavLink></li>
-              <li><NavLink to="contato" onClick={this.closeMenuMobile}>Contato</NavLink></li>
               <li><NavLink to="sobre" onClick={this.closeMenuMobile}>Sobre</NavLink></li>
+              <li><NavLink to="contato" onClick={this.closeMenuMobile}>Contato</NavLink></li>
             </ul>
           </div>
         </div>
