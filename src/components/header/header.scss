@@ -136,3 +136,72 @@
         }
     }
 }
+
+@media screen and (max-width: 767px) {
+    #main-header {    
+        .top {
+            & {
+                flex-wrap: wrap;
+            }
+    
+            .logo {
+                & {
+                    width: 15%;
+                }
+            }
+    
+            .buscar {
+                & {
+                    width: 85%;
+                }
+    
+                form {
+                    input[type=submit] {
+                        & {
+                            font-size: .5rem;
+                        }
+                    }
+                }
+            }
+    
+            .carrinho-login {
+                & {
+                    width: calc(50% - 10px);
+                    margin: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #main-header {    
+        .top {
+            .logo {
+                & {
+                    width: 100%;
+                }
+
+                img {
+                    & {
+                        margin: auto;
+                    }
+                }
+            }
+    
+            .buscar {
+                & {
+                    width: 100%;
+                }
+    
+                form {
+                    input[type=submit] {
+                        & {
+                            font-size: .6rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
