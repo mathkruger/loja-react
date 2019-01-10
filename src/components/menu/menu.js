@@ -18,12 +18,14 @@ class Menu extends Component {
       <nav id="main-menu" className="reset section">
         <div className="content">
           <div className="col-12">
-            <button className="menu-mobile" onClick={this.openMenuMobile} >Menu</button>
+            <button className="menu-mobile" onClick={this.openMenuMobile}>
+              <i class="fas fa-bars"></i> MENU
+            </button>
             <ul>
               <button className="close-mobile" onClick={this.closeMenuMobile}>Fechar</button>
-              <li><NavLink to="/">Home</NavLink></li>
-              <li><NavLink to="contato">Contato</NavLink></li>
-              <li><NavLink to="sobre">Sobre</NavLink></li>
+              <li><NavLink to="/" onClick={this.closeMenuMobile}>Home</NavLink></li>
+              <li><NavLink to="contato" onClick={this.closeMenuMobile}>Contato</NavLink></li>
+              <li><NavLink to="sobre" onClick={this.closeMenuMobile}>Sobre</NavLink></li>
             </ul>
           </div>
         </div>

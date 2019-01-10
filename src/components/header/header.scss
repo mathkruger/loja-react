@@ -156,9 +156,15 @@
                 }
     
                 form {
+                    input[type=text] {
+                        & {
+                            width: 70%;
+                        }
+                    }
                     input[type=submit] {
                         & {
                             font-size: .5rem;
+                            width: 30%;
                         }
                     }
                 }

@@ -1,23 +1,27 @@
 import React, { Component } from 'react';
-
 import './home.scss';
 
+import Slider from '../slider/slider';
+
 class Home extends Component {
+  imagesSlider = [
+    {
+      src: '/images/orra-slider-carnaval-00375-protetor-para-colchao-casal.png',
+      alt: 'Colchão vai tomar no cu'
+    },
+    {
+      src: '/images/orra-slider-carnaval-03296-trav--visco-malha-infantil-20cm-x-30cm---o-a-2-anos-.png',
+      alt: 'Colchão vai se foder'
+    },
+    {
+      src: '/images/orra-slider-carnaval-03334-cobertor-com-mangas-caramelo.png',
+      alt: 'Colchão bolsominion'
+    },    
+  ]
+
   render() {
     return (
-      <section className="reset section">
-        <div className="content">
-          <div className="col-12">
-            <h1 className="titulo">Sua loja de games</h1>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, cumque? Temporibus quos quisquam odit nulla impedit suscipit, autem nostrum, debitis sapiente quia tempore dolore blanditiis. Aperiam odio numquam earum obcaecati.
-              Hic dolorum beatae itaque vero voluptatem id corrupti quae architecto autem. Quasi, quod error tenetur molestiae magnam quo veniam et odio rerum illum nostrum debitis facilis deserunt neque modi repellendus!
-              Nisi perspiciatis porro quo provident, corporis tempora odit labore fugit est dignissimos, iste saepe rerum illum eius autem minima voluptate sequi ut error dolores ab eum earum ducimus? Inventore, omnis.
-            </p>
-          </div>
-        </div>
-      </section>
+      <Slider images={this.imagesSlider} />
     );
   }
 }
