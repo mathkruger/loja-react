@@ -25,7 +25,7 @@ class Slider extends Component {
               }
 
               return (
-                <div className="slider-item" style={style}>
+                <div key={i} className="slider-item" style={style}>
                   <img src={element.src} alt={element.alt}/>
                 </div>
               )

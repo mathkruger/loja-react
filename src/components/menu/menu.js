@@ -13,19 +13,25 @@ class Menu extends Component {
     document.querySelector('#main-menu ul').classList.remove('open')
   }
 
+  changeLink = (target) => {
+    this.closeMenuMobile()
+
+    console.log(target)
+  }
+
   render() {
     return (
       <nav id="main-menu" className="reset section">
         <div className="content">
           <div className="col-12">
             <button className="menu-mobile" onClick={this.openMenuMobile}>
-              <i class="fas fa-bars"></i> MENU
+              <i className="fas fa-bars"></i> MENU
             </button>
             <ul>
-              <button className="close-mobile" onClick={this.closeMenuMobile}>Fechar</button>
-              <li><NavLink to="/" onClick={this.closeMenuMobile}>Home</NavLink></li>
-              <li><NavLink to="sobre" onClick={this.closeMenuMobile}>Sobre</NavLink></li>
-              <li><NavLink to="contato" onClick={this.closeMenuMobile}>Contato</NavLink></li>
+              <button className="close-mobile" onClick={this.changeLink}>Fechar</button>
+              <li><NavLink to="/" onClick={this.changeLink}>Home</NavLink></li>
+              <li><NavLink to="sobre" onClick={this.changeLink}>Sobre</NavLink></li>
+              <li><NavLink to="contato" onClick={this.changeLink}>Contato</NavLink></li>
             </ul>
           </div>
         </div>
